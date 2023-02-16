@@ -12,4 +12,8 @@ for filepath in filepaths:
     with open(filepath) as file:
         content = file.read()
     scores = analyzer.polarity_scores(content)
-    print(scores)
+    positivity.append(scores["pos"])
+    negativity.append(scores["neg"])
+
+print(positivity)
+print(negativity)
