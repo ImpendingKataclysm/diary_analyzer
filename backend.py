@@ -2,7 +2,7 @@ import glob
 import nltk
 from nltk.sentiment import SentimentIntensityAnalyzer
 
-nltk.download('vader-lexicon')
+nltk.download('vader_-lexicon')
 
 directory = "diary/"
 extension = ".txt"
