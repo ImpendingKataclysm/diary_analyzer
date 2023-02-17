@@ -1,19 +1,7 @@
-import glob
 import streamlit as st
 import plotly.express as px
-from nltk.sentiment import SentimentIntensityAnalyzer
+from backend import pos_scores, neg_scores
 
-filepaths = sorted(glob.glob("diary/*.txt"))
-analyzer = SentimentIntensityAnalyzer()
-negativity = []
-positivity = []
+print(pos_scores)
+print(neg_scores)
 
-for filepath in filepaths:
-    with open(filepath) as file:
-        content = file.read()
-    scores = analyzer.polarity_scores(content)
-    positivity.append(scores["pos"])
-    negativity.append(scores["neg"])
-
-print(positivity)
-print(negativity)
