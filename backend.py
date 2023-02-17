@@ -17,3 +17,5 @@ for filepath in filepaths:
         content = file.read()
     pos_scores.append(get_scores(content, "pos"))
     neg_scores.append(get_scores(content, "neg"))
+
+dates = [path[6:-4] for path in filepaths]
