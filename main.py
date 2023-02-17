@@ -11,6 +11,6 @@ st.plotly_chart(pos_graph)
 
 st.subheader("Negativity")
 
-neg_graph = px.line(x=dates, y=neg_scores, labels={"X": "Date",
+neg_graph = px.line(x=dates, y=neg_scores, labels={"x": "Date",
                                                    "y": "Negativity Score"})
 st.plotly_chart(neg_graph)

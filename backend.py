@@ -1,7 +1,9 @@
 import glob
 from nltk.sentiment import SentimentIntensityAnalyzer
 
-filepaths = sorted(glob.glob("diary/*.txt"))
+directory = "diary/"
+extension = ".txt"
+filepaths = sorted(glob.glob(f"{directory}*{extension}"))
 analyzer = SentimentIntensityAnalyzer()
 pos_scores = []
 neg_scores = []
@@ -18,4 +20,4 @@ for filepath in filepaths:
     pos_scores.append(get_scores(content, "pos"))
     neg_scores.append(get_scores(content, "neg"))
 
-dates = [path[6:-4] for path in filepaths]
+dates = [path[len(directory):-len(extension)] for path in filepaths]
